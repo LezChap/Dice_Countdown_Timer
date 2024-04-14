@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.lezchap.dicetimer.MainFragment"
+        android:label="@string/Main_fragment_label"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_DiceTimerFragment"
+            app:destination="@id/DiceTimerFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_DiceSettingsFragment"
+            app:destination="@+id/DiceSettingsFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_StaticTimerFragment"
+            app:destination="@+id/StaticTimerFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_staticSettingsFragment"
+            app:destination="@+id/StaticSettingsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/DiceTimerFragment"
+        android:name="com.lezchap.dicetimer.DiceTimerFragment"
+        android:label="@string/dice_timer_fragment_label"
+        tools:layout="@layout/fragment_dice_timer">
+
+        <action
+            android:id="@+id/action_DiceTimerFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DiceSettingsFragment"
+        android:name="com.lezchap.dicetimer.DiceSettingsFragment"
+        android:label="Dice Timer Settings">
+
+        <action
+            android:id="@+id/action_DiceSettings_to_MainFragment"
+            app:destination="@+id/MainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/StaticTimerFragment"
+        android:name="com.lezchap.dicetimer.StaticTimerFragment"
+        android:label="@string/static_timer_fragment_label"
+        tools:layout="@layout/fragment_static_timer">
+
+        <action
+            android:id="@+id/action_StaticTimerFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/StaticSettingsFragment"
+        android:name="com.lezchap.dicetimer.StaticSettingsFragment"
+        android:label="Countdown Timer Settings"
+        tools:layout="@layout/fragment_static_settings">
+
+        <action
+            android:id="@+id/action_StaticSettings_to_MainFragment"
+            app:destination="@+id/MainFragment" />
+    </fragment>
+
+
+</navigation>

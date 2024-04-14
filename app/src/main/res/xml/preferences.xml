@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="time_category"
+        app:title="Time Settings">
+
+        <ListPreference
+            app:key="time_unit"
+            app:title="Unit of Time"
+            app:entries="@array/time_unit"
+            app:entryValues="@array/time_unit"
+            app:defaultValue="second"
+            app:summary="%s"/>
+
+        <EditTextPreference
+            app:key="formula"
+            app:title="Timer Equation"
+            app:dialogTitle="Enter the equation to calculate the timer from the dice roll."
+            app:dialogMessage="Use &quot;x&quot; for the dice roll.  &quot;*&quot; and &quot;/&quot; to multiply or divide, &quot;+&quot; or &quot;-&quot; to add or subtract, &quot;^&quot; for exponents.  &quot;x&quot; may need to be nested in parenthesis in some equations to work.\n\nDefault: &quot;(30*x)+90&quot;"
+            app:defaultValue="(30*x)+90"
+            app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference
+            app:key="evaluated_formula"
+            app:selectable="false"
+            app:title="Equation Output"
+            app:defaultValue=" " />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="Notifications"
+        app:title="Notifications" >
+
+        <SwitchPreference
+            app:key="vibrate_alert"
+            app:title="Vibrate Alert"
+            app:defaultValue="true" />
+        <SwitchPreference
+            app:key="audible_alert"
+            app:title="Audible Alert"
+            app:defaultValue="false" />
+        <SwitchPreference
+            app:key="flash_alert"
+            app:title="Flashing Screen"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="dice_category"
+        app:title="Dice Settings">
+
+        <SeekBarPreference
+            app:key="total_dice"
+            app:title="Total Dice"
+            app:showSeekBarValue="true"
+            app:defaultValue="1"
+            app:min="1"
+            android:max="10" />
+
+        <ListPreference
+            app:key="dice_size"
+            app:title="Size of Dice"
+            app:entries="@array/dice_sizes"
+            app:entryValues="@array/dice_sizes"
+            app:defaultValue="6"
+            app:summary="%s sided dice"/>
+
+        <ListPreference
+            android:key="roll_type"
+            android:title="Roll Type"
+            android:entries="@array/roll_types"
+            android:entryValues="@array/roll_types"
+            android:defaultValue="normal"
+            android:summary="%s rolls" />
+    </PreferenceCategory>
+
+    <SeekBarPreference
+        app:key="static_years"
+        app:defaultValue="0"
+        app:isPreferenceVisible="false" />
+    <SeekBarPreference
+        app:key="static_days"
+        app:defaultValue="0"
+        app:isPreferenceVisible="false" />
+    <SeekBarPreference
+        app:key="static_hours"
+        app:defaultValue="0"
+        app:isPreferenceVisible="false" />
+    <SeekBarPreference
+        app:key="static_minutes"
+        app:defaultValue="5"
+        app:isPreferenceVisible="false" />
+    <SeekBarPreference
+        app:key="static_seconds"
+        app:defaultValue="0"
+        app:isPreferenceVisible="false" />
+
+</androidx.preference.PreferenceScreen>

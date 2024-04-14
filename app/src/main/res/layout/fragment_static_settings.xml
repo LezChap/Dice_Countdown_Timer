@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StaticSettingsFragment" >
+
+    <TextView
+        android:id="@+id/YearTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_alignEnd="@id/numberPickerYears"
+        android:layout_alignStart="@id/numberPickerYears"
+        android:text="Yrs" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/YearTitle"
+        android:layout_toStartOf="@+id/numberPickerDays" />
+
+    <TextView
+        android:id="@+id/DayTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_alignEnd="@id/numberPickerDays"
+        android:layout_alignStart="@id/numberPickerDays"
+        android:text="Days" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DayTitle"
+        android:layout_toStartOf="@+id/numberPickerHours" />
+
+    <TextView
+        android:id="@+id/HourTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_alignEnd="@id/numberPickerHours"
+        android:layout_alignStart="@id/numberPickerHours"
+        android:text="Hrs" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/HourTitle"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/MinuteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_alignEnd="@id/numberPickerMinutes"
+        android:layout_alignStart="@id/numberPickerMinutes"
+        android:text="Mins" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/MinuteTitle"
+        android:layout_toEndOf="@id/numberPickerHours"/>
+
+    <TextView
+        android:id="@+id/SecondTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_alignEnd="@id/numberPickerSeconds"
+        android:layout_alignStart="@id/numberPickerSeconds"
+        android:text="Secs" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SecondTitle"
+        android:layout_toEndOf="@+id/numberPickerMinutes" />
+
+    <TextView
+        android:id="@+id/Notifications_Category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numberPickerYears"
+        android:layout_alignStart="@+id/numberPickerYears"
+        android:text="Notifications"
+        android:textSize="24sp" />
+
+    <Switch
+        android:id="@+id/Vibrate_Alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@id/Notifications_Category"
+        android:layout_alignStart="@id/Notifications_Category"
+        android:text="Vibrate Alert"
+        android:checked="true"/>
+    <Switch
+        android:id="@+id/Audible_Alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@id/Vibrate_Alert"
+        android:layout_alignStart="@id/Notifications_Category"
+        android:text="Audible Alert"/>
+    <Switch
+        android:id="@+id/Flash_Alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@id/Audible_Alert"
+        android:layout_alignStart="@id/Notifications_Category"
+        android:text="Flashing Screen"/>
+
+</RelativeLayout>
